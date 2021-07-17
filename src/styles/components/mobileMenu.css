@@ -1,0 +1,128 @@
+.mobileMenu{
+	transform: translate(-100%, 0);
+	transition: all .375s;
+	z-index: 99;
+	position: fixed; 
+}
+.isOpen .mobileMenu{
+	transform: translate(-15%, 0);
+	
+}
+.mobileMenu .inner{
+	z-index: 2;
+	position: relative;
+	
+	transition: all .375s;
+}
+
+.menuMask{
+	position: fixed; 
+	right: 0;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	z-index: 98;
+	transform: translate(100%, 0);
+	
+	opacity: 0;
+	transition: all .375s;
+}
+.isOpen .menuMask{
+	transform: translate(0%, 0);
+	opacity: 1;
+	background: rgba(0,0,0, 0.2);
+	
+}
+
+.mobileMenu svg{
+	opacity: 0;
+	transition: all .375s;
+	transition-delay: .375s;
+}
+.isOpen .mobileMenu svg{
+	opacity: 1;
+	
+}
+
+.mobileMenu::after,
+.mobileMenu::before  {
+	content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: -15px;
+    background: rgba(127, 66, 246, 0.9);
+    transform-origin: 0 0;
+    transform: skew(-14deg) translateX(-120%);
+    transition: all .275s .1s;
+    z-index: 0;
+}
+.mobileMenu::before{
+    background: rgba(255, 255, 255, 1);
+    z-index: 1;
+    right: -5px;
+	
+}
+.mobileMenu::after{
+	box-shadow: 0px 0px 16px rgba(0,0,0,0.4);
+}
+
+.isOpen .mobileMenu::after,
+.isOpen .mobileMenu::before {
+    transform: skew(-14deg) translateX(0);
+}
+
+.mobileMenu ul, 
+.mobileMenu li{
+    list-style: none;
+    padding: 0;
+}
+.mobileMenu ul{
+/*     display: inline-flex; */
+    flex-direction: column;
+    height: 93%;
+    align-items: flex-end;
+    justify-content: center;
+    transform: translateX(-18%) skew(-16deg);
+}
+
+.mobileMenu li {
+    display: block;
+    margin: .5rem 2em;
+    text-align: right;
+    transform: skew(16deg);
+}
+
+.mobileMenu a {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+.mobileMenu a {
+    display: block;
+    padding: 12px 0;
+    font-size: 1.4em;
+    text-decoration: none;
+    
+    font-family: Poppins, system-ui;
+}
+
+.isOpen .mobileMenu a {
+    opacity: 1;
+    transform: translateY(0);
+}
+.mobileMenu ul li:nth-child(1) a {
+	transition: all 275ms 175ms
+}
+.mobileMenu ul li:nth-child(2) a {
+	transition: all 275ms 225ms
+}
+.mobileMenu ul li:nth-child(3) a {
+	transition: all 275ms 275ms
+}
+.mobileMenu ul li:nth-child(4) a {
+	transition: all 275ms 325ms
+}
+.mobileMenu ul li:nth-child(5) a {
+	transition: all 275ms 375ms
+}

@@ -1,0 +1,171 @@
+@import url('https://rsms.me/inter/inter.css');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
+:root {
+  --header-line-height: 120%;
+  --header-letter-spacing: 0;
+  --header-font-weight: 800;
+  --header-margin: 0 0 10px 0;
+
+  --paragraph-line-height: 170%;
+  --paragraph-letter-spacing: 0.2px;
+  --paragraph-font-weight: 400;
+  --paragraph-bold-weight: 700;
+  --paragraph-margin: 0;
+
+  --btn-line-height: 190%;
+  --btn-letter-spacing: 0;
+  --btn-font-weight: 700;
+  --btn-bold-weight: 700;
+  --btn-margin: 0;
+  --text-btn: 15px;
+
+  // Mobile default font sizes
+  --text-h1: 25px;
+  --text-h2: 18px;
+  --text-h3: 16px;
+  --text-h4: 15px;
+  --text-paragraph: 14px;
+  --text-paragraph-large: 17px;
+  --text-paragraph-small: 12px;
+  --text-small-text: 10px;
+}
+
+@screen md {
+  :root {
+    // Desktop default font sizes
+    --text-h1: 48px;
+    --text-h2: 31px;
+    --text-h3: 25px;
+    --text-h4: 20px;
+    --text-paragraph: 16px;
+    --text-small-paragraph: 13px;
+    --text-small-text: 13px;
+  }
+}
+
+p a {
+  @apply text-primary transition-all duration-300 border-b border-transparent;
+  &:hover {
+    @apply text-primary-hover border-primary;
+  }
+}
+
+// Font styling
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: var(--header-margin);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  @apply text-header font-brand;
+  line-height: var(--header-line-height);
+  letter-spacing: var(--header-letter-spacing);
+  font-weight: var(--header-font-weight);
+  .dark & {
+    @apply text-header-dark;
+  }
+}
+
+body,
+p,
+small,
+li,
+b,
+ul {
+  @apply text-gray-600 font-mono;
+  @include fontSmooth;
+  line-height: var(--paragraph-line-height);
+  letter-spacing: var(--paragraph-letter-spacing);
+  font-weight: var(--paragraph-font-weight);
+  margin: var(--paragraph-margin);
+  font-size: var(--text-paragraph);
+  .dark & {
+    @apply text-paragraph-dark;
+  }
+}
+
+h1,
+.h1 {
+  font-size: var(--text-h1);
+}
+h2,
+.h2 {
+  font-size: var(--text-h2);
+}
+h3,
+.h3 {
+  font-size: var(--text-h3);
+}
+h4,
+.h4 {
+  font-size: var(--text-h4);
+}
+p {
+  font-size: var(--text-paragraph);
+  @apply mb-5;
+}
+p.lg {
+  font-size: var(--text-paragraph-large);
+}
+p.sm {
+  font-size: var(--text-paragraph-small);
+}
+small,
+.small {
+  font-size: var(--text-small-text);
+}
+b,
+strong {
+  font-weight: var(--paragraph-bold-weight);
+}
+
+// Button typography settings
+.btn {
+  line-height: var(--btn-line-height);
+  letter-spacing: var(--btn-letter-spacing);
+  font-weight: var(--btn-font-weight);
+  margin: var(--btn-margin);
+  font-size: var(--text-btn);
+}
+
+// Misc
+article,
+pre,
+address,
+blockquote {
+  @apply my-5 py-5;
+}
+
+pre {
+  @apply overflow-scroll;
+}
+
+ul.list {
+  @apply mb-4;
+  li {
+    @apply list-disc list-inside mt-4;
+  }
+}
+
+ol.list {
+  @apply mb-4;
+  li {
+    @apply list-decimal list-inside mt-4;
+  }
+}

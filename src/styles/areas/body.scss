@@ -1,0 +1,25 @@
+body {
+  @apply bg-white;
+  .dark & {
+    @apply bg-dark-900;
+  }
+}
+
+html, body {
+  width:100%;
+}
+
+.container {
+  max-width: 1150px;
+  // @apply px-5;
+
+  &-sm {
+    @apply mx-auto;
+    max-width: 900px;
+  }
+
+  &-lg {
+    @apply mx-auto;
+    max-width: 1440px;
+  }
+}

@@ -1,0 +1,39 @@
+.btn {
+  @apply border px-4 py-[8px] rounded-full border-transparent;
+  line-height: 100% !important;
+  @include t1(0.2s);
+  &:hover {
+    @apply transform -translate-y-px;
+  }
+
+  &-primary {
+    @apply bg-primary border-primary-light text-white bg-gradient-to-tr from-primary to-primary-light;
+    &:hover {
+      @apply bg-gradient-to-bl;
+    }
+  }
+
+  &-neutral {
+    @apply text-gray-500 bg-white border-2 border-gray-400;
+    .dark & {
+      @apply border-2 bg-transparent border-gray-500 text-gray-400;
+    }
+    &:hover {
+      @apply border-gray-700 text-gray-800;
+      .dark & {
+        @apply text-white border-white;
+      }
+    }
+  }
+}
+
+.tag {
+  // @extend .btn;
+  @apply inline-block border rounded-full border-gray-200 py-1 px-3 text-xs font-medium;
+  .dark & {
+    @apply border-dark text-paragraph-dark;
+  }
+  &.positive {
+    @apply text-positive border-positive;
+  }
+}

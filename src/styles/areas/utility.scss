@@ -1,0 +1,89 @@
+// Transition Cubic Bezier Default
+@mixin t1($time: 0.3s, $el: all, $ease: cubic-bezier(0.17, 0.67, 0.83, 0.67)) {
+  transition: $el $time $ease;
+}
+.t1 {
+  @include t1;
+}
+
+// Font smoothing
+@mixin fontSmooth {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.border,
+.border-b,
+.border-t,
+.border-r,
+.border-l {
+  .dark & {
+    @apply border-dark;
+  }
+}
+
+//   *, ::before, ::after {
+//     @apply border-dark;
+//   }
+// }
+
+// Gradients
+.gradient-primary-1 {
+  @apply bg-gradient-to-tr from-primary-light to-primary-dark;
+}
+.gradient-primary-2 {
+  @apply bg-gradient-to-tr from-primary-light to-transparent;
+}
+.gradient-ps {
+  @apply bg-gradient-to-tr from-primary to-secondary;
+}
+.gradient-secondary-1 {
+  @apply bg-gradient-to-tr from-secondary-light to-secondary-dark;
+}
+.gradient-secondary-2 {
+  @apply bg-gradient-to-tr from-secondary-light to-transparent;
+}
+
+// Text Gradient
+.text-gradient-ps {
+  @apply bg-gradient-to-tr from-primary to-secondary;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+// Shadows
+.c-shadow-1 {
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.07);
+}
+
+.c-shadow-2 {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11),
+    0 4px 4px rgba(0, 0, 0, 0.11), 0 6px 8px rgba(0, 0, 0, 0.11),
+    0 8px 16px rgba(0, 0, 0, 0.11);
+}
+
+.c-shadow-3 {
+  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.09), 0 4px 2px rgba(0, 0, 0, 0.09),
+    0 8px 4px rgba(0, 0, 0, 0.09), 0 16px 8px rgba(0, 0, 0, 0.09),
+    0 32px 16px rgba(0, 0, 0, 0.09);
+}
+
+.c-shadow-4 {
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.07);
+}
+
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-7px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
