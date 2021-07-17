@@ -28,26 +28,26 @@ export function IndexPage(props) {
   
   return (
     <>
-      <UIHeader
+      {/* <UIHeader
         menu={props.menu}
         login={login}
         logout={logout}
         account={account || ''}
-      />
+      /> */}
 
       {/* TODO: Create a Layout module to house the content */}
       <div className='w-full px-5'>
         <div className='container my-16 md:my-28'>
           <div className='max-w-[700px] mx-auto text-center'>
             <h1 className="bg-clip-text bg-gradient-to-b from-primary to-primary-light text-transparent">
-              Welcome to PolkaPlace!
+              PolkaPlace!
             </h1>
-            <h2>The place to mint your once in a lifetime revenue sharing NFT for PolkaParty</h2>
+            {/* <h2>The place to mint your once in a lifetime revenue sharing NFT for PolkaParty</h2> */}
           </div>
         </div>
       </div>
 
-      <UIFooter menu={props.menu} />
+      {/* <UIFooter menu={props.menu} /> */}
     </>
   );
 }
