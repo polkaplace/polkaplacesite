@@ -28,7 +28,7 @@ const ConnectButton = (props) => {
               <CreditCardIcon className='text-paragraph' />
             </button>
             <Link to='/my'>
-              <Button size='small'>My PolygonPunks</Button>
+              <Button size='small'>My</Button>
             </Link>
           </div>
           <AccountModal
