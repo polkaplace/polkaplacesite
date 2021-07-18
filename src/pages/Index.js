@@ -40,7 +40,7 @@ export function IndexPage(props) {
           </div>
           
           <Remaining />
-          
+          <button className="align-bottom inline-flex items-center justify-center cursor-pointer leading-5 transition-colors duration-150 font-bold focus:outline-none hover:shadow font-sans px-7 py-2 rounded-full text-sm text-white bg-primary bg-gradient-to-b from-primary to-primary-light border border-transparent active:bg-primary-hover hover:bg-primary-hover w-full" type="button">Mint</button>
         </div>
       </div>
 
