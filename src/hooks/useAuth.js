@@ -4,7 +4,7 @@ import { NoBscProviderError } from '@binance-chain/bsc-connector'
 import { NoEthereumProviderError, UserRejectedRequestError as UserRejectedRequestErrorInjected} from '@web3-react/injected-connector'
 import { UserRejectedRequestError as UserRejectedRequestErrorWalletConnect, WalletConnectConnector} from '@web3-react/walletconnect-connector'
 
-import useNotifications from './useNotifications'
+import useNotifications from '../state/notifications/hooks'
 
 import { connectorsByName, connectorLocalStorageKey, ConnectorNames  } from '../connectors'
 

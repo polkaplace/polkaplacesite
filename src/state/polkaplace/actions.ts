@@ -42,9 +42,9 @@ export function setTotalSupply(total) {
         total: total
     };
 }
-export function setPunksRemainingToAssign(total) {
+export function setRemainingToAssign(total) {
     return {
-        type: SET_PUNKSREMAININGTOASSIGN,
+        type: SET_REMAININGTOASSIGN,
         total: total
     };
 }
@@ -57,5 +57,5 @@ export const SET_CLAIMPRICE= 'SET_CLAIMPRICE';
 export const SET_IMAGEHASH= 'SET_IMAGEHASH';
 
 export const SET_TOTALSUPLY= 'SET_TOTALSUPLY';
-export const SET_PUNKSREMAININGTOASSIGN= 'SET_PUNKSREMAININGTOASSIGN';
+export const SET_REMAININGTOASSIGN= 'SET_REMAININGTOASSIGN';
 

@@ -1,8 +1,8 @@
-import { SET_NAME, SET_SYMBOL, SET_STANDARD, SET_DECIMALS, SET_CLAIMPRICE, SET_IMAGEHASH, SET_TOTALSUPLY, SET_PUNKSREMAININGTOASSIGN } from './actions';
+import { SET_NAME, SET_SYMBOL, SET_STANDARD, SET_DECIMALS, SET_CLAIMPRICE, SET_IMAGEHASH, SET_TOTALSUPLY, SET_REMAININGTOASSIGN } from './actions';
 
 const initialState = {
 	totalsuply: 0,
-	punksremainingtoassign: 0,
+	remainingtoassign: 0,
 	symbol: '',
 	standard: '',
 	name: '',
@@ -11,7 +11,7 @@ const initialState = {
 	imagehash: ''
 };
 
-const polygonpunks = (state = initialState, action) => {
+const polkaplace = (state = initialState, action) => {
 	switch (action.type) {
         
         // Set currentgame
@@ -36,8 +36,8 @@ const polygonpunks = (state = initialState, action) => {
 	    case SET_TOTALSUPLY:
         	return {...state, totalsuply: action.total};
         	
-        case SET_PUNKSREMAININGTOASSIGN:
-        	return {...state, punksremainingtoassign: action.total};
+        case SET_REMAININGTOASSIGN:
+        	return {...state, remainingtoassign: action.total};
 
         // Defualt
         default:
@@ -45,4 +45,4 @@ const polygonpunks = (state = initialState, action) => {
     }
 }
 
-export default polygonpunks; 
+export default polkaplace; 

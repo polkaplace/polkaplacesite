@@ -6,7 +6,7 @@ import { updateVersion } from '../state/global/actions'
 import application from '../state/application/reducer'
 import user from '../state/user/reducer'
 import notifications from '../state/notifications/reducer'
-import polygonpunks from '../state/polygonpunks/reducer'
+import polkaplace from '../state/polkaplace/reducer'
 
 type MergedState = {
   user: {
@@ -17,7 +17,7 @@ type MergedState = {
 let middleware = [];
 let loadedState = undefined;
 
-var PERSISTED_KEYS: string[] = ['user', 'application', 'polygonpunks']
+var PERSISTED_KEYS: string[] = ['user', 'application', 'polkaplace']
 loadedState = load({ states: PERSISTED_KEYS }) as MergedState
 middleware.push(save({ states: PERSISTED_KEYS }));
 
@@ -26,7 +26,7 @@ const store = configureStore({
     application,
     user,
     notifications,
-    polygonpunks
+    polkaplace
   },
   middleware: [...getDefaultMiddleware({ thunk: false }), ...middleware],
   

@@ -128,16 +128,16 @@ const Header = (props) => {
 		<div className='container py-4 pt-6 md:py-5 flex items-center'>
 			{logo}
 			<div className='flex items-center text-header w-full'>
-      <div className="ml-5">{makeMenu(props.menu.mainMenu)}</div>
+				<div className="ml-5">{makeMenu(props.menu.mainMenu)}</div>
 				<div className='flex items-center hidden md:block ml-auto'>
-					<a href="https://polkaparty.io" target="_blank" norefferer>polkaparty.io</a>
+					<a href="https://polkaparty.io" target="_blank" norefferer="true">polkaparty.io</a>
 				</div>
 
-			<div className='px-3'>
-				<div className='flex items-center'>
-					<Socials menu={props.menu} />
+				<div className='px-3'>
+					<div className='flex items-center'>
+						<Socials menu={props.menu} />
+					</div>
 				</div>
-			</div>
       
 				<div className='hidden md:block'>{connectButton}</div>
 			</div>

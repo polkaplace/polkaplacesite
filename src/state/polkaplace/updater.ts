@@ -1,6 +1,6 @@
 import { useEffect, useCallback, useState } from 'react'
 import { useSelector } from 'react-redux'
-import { usePolygonpunks } from './hooks';
+import { usePolkaplace } from './hooks';
 import useDebounce from '../../hooks/useDebounce'
 import { useActiveWeb3React } from '../../hooks'
 import useIsWindowVisible from '../../hooks/useIsWindowVisible'
@@ -9,7 +9,8 @@ export default function Updater(): null {
 	const { library, chainId } = useActiveWeb3React()
 	const windowVisible = useIsWindowVisible()
 	  
-	const { getName, getSymbol, getStandard, getDecimals, getClaimPrice, getImageHash, getTotalSupply, getPunksRemainingToAssign } = usePolygonpunks();
+/*
+	const { getName, getSymbol, getStandard, getDecimals, getClaimPrice, getImageHash, getTotalSupply, getRemainingToAssign } = usePolkaplace();
 	
 	const [state, setState] = useState<{ chainId: number | undefined; blockNumber: number | null }>({
 		chainId,
@@ -26,13 +27,15 @@ export default function Updater(): null {
 		})
 	}, [chainId, setState])
 	
-	const name = useSelector(state => state.polygonpunks.name);
-	const symbol = useSelector(state => state.polygonpunks.symbol);
-	const standard = useSelector(state => state.polygonpunks.standard);
-	const decimals = useSelector(state => state.polygonpunks.decimals);
-	const claimprice = useSelector(state => state.polygonpunks.claimprice);
-	const imagehash = useSelector(state => state.polygonpunks.imagehash);
+	const name = useSelector(state => state.polkaplace.name);
+	const symbol = useSelector(state => state.polkaplace.symbol);
+	const standard = useSelector(state => state.polkaplace.standard);
+	const decimals = useSelector(state => state.polkaplace.decimals);
+	const claimprice = useSelector(state => state.polkaplace.claimprice);
+	const imagehash = useSelector(state => state.polkaplace.imagehash);
+*/
 	
+/*
 	useEffect(() => {
 		
 		if(!name){ getName(); }
@@ -41,21 +44,22 @@ export default function Updater(): null {
 		if(!imagehash){ getImageHash(); }
 
 		getTotalSupply();
-		getPunksRemainingToAssign();
+		getRemainingToAssign();
 		
 		library.on('block', blockNumberCallback)
 		return () => {
 			library.removeListener('block', blockNumberCallback)
 		}
-	}, [getName, getSymbol, getStandard, getDecimals, getClaimPrice, getImageHash, getTotalSupply, getPunksRemainingToAssign,
+	}, [getName, getSymbol, getStandard, getDecimals, getClaimPrice, getImageHash, getTotalSupply, getRemainingToAssign,
 		name, symbol, standard, decimals, claimprice, imagehash, blockNumberCallback ])
     
 	const debouncedState = useDebounce(state, 100)
 	
 	useEffect(() => {
 		if (!debouncedState.chainId || !debouncedState.blockNumber || !windowVisible) return
-		getPunksRemainingToAssign();
+		getRemainingToAssign();
 	}, [debouncedState.blockNumber, debouncedState.chainId])
+*/
     
 	return null
 }

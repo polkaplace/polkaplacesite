@@ -15,17 +15,11 @@ import Web3ReactManager from './components/web3reactmanager';
 
 // Updaters
 import ApplicationUpdater from './state/application/updater';
-import PolypunksUpdater from './state/polygonpunks/updater';
+import PolkaplaceUpdater from './state/polkaplace/updater';
 
 // Pages
 import Index from './pages/Index';
 import HowToMint from './pages/HowToMint'
-// import GetPolygonPunks from './pages/GetPolyPunks';
-// import Attributes from './pages/Attributes';
-// import MyPolygonPunks from './pages/MyPolyPunks';
-// import Punk from './pages/Punk';
-// import Punks from './pages/Punks';
-// import Support from './pages/Support';
 
 // Notifications
 import Notifications from './components/notifications/Notifications';
@@ -48,7 +42,7 @@ let menu = {
     },
     /*
     {
-      name: 'My PolygonPunks',
+      name: 'My Polkas,
       subname: '',
       link: '/my',
     },
@@ -80,7 +74,7 @@ export function App() {
         <Router history={history}>
           <Provider store={store}>
             <ApplicationUpdater />
-            <PolypunksUpdater />
+            <PolkaplaceUpdater />
 
             <Windmill theme={ppTheme}>
               <Route

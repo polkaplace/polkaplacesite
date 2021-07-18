@@ -11,21 +11,15 @@ import { Button } from '@windmill/react-ui';
 import { useActiveWeb3React } from '../hooks/';
 import useAuth from '../hooks/useAuth.js';
 
-import RemainingPunks from '../components/site/RemainingPunks.js';
 
-import AllPunksPng from '../assets/img/punks.png';
-import PipePunkImage from '../assets/img/pipe.png';
-import logoWhite from '../assets/img/logoWhite.svg';
-import polygonLogo from '../assets/img/polygon.svg';
+// Components
+import Remaining from '../components/site/Remaining';
+  
 
-import Box1Image from '../assets/img/box-1.png';
-import Box2Image from '../assets/img/box-2.png';
-import Box3Image from '../assets/img/box-3.png';
 
 export function IndexPage(props) {
   const { login, logout } = useAuth();
   const { account } = useActiveWeb3React();
-  
   return (
     <>
       <UIHeader
@@ -44,6 +38,9 @@ export function IndexPage(props) {
             </h1>
             <h2>The place to mint your once in a lifetime revenue sharing NFT for PolkaParty</h2>
           </div>
+          
+          <Remaining />
+          
         </div>
       </div>
 

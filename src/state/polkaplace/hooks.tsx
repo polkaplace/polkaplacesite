@@ -1,24 +1,24 @@
 import { useState, useMemo, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import POLYPUNKS_ABI from '../../constants/contracts/abis/polygonpunks.json'
+import POLKAPLACE_ABI from '../../constants/contracts/abis/polkaplace.json'
 
 import { useActiveWeb3React } from '../../hooks'
 import { useContract } from '../../hooks/useContract'
 
-import { setName, setSymbol, setClaimPrice, setImageHash, setTotalSupply, setPunksRemainingToAssign } from './actions'
+import { setName, setSymbol, setClaimPrice, setImageHash, setTotalSupply, setRemainingToAssign } from './actions'
 
-export function usePolypunksContract(withSignerIfPossible = false): Contract | null {
-	const contractAddress = process.env.REACT_APP_POLYPUNKS_CONTRACT;
-	return useContract(contractAddress, POLYPUNKS_ABI, withSignerIfPossible);
+export function usePolkaPlaceContract(withSignerIfPossible = false): Contract | null {
+	const contractAddress = process.env.REACT_APP_POLKAPLACE_CONTRACT;
+	return useContract(contractAddress, POLKAPLACE_ABI, withSignerIfPossible);
 }
 
-export const usePolygonpunks = () => {
+export const usePolkaplace = () => {
 	const dispatch = useDispatch();
 	
-	const Contract = usePolypunksContract(true);
+	const Contract = usePolkaPlaceContract(true);
 	const { account } = useActiveWeb3React();
-	const claimprice = useSelector(state => state.polygonpunks.claimprice);
+	const claimprice = useSelector(state => state.polkaplace.claimprice);
 	
 	
 	const helpers = useMemo(() => {
@@ -54,10 +54,10 @@ export const usePolygonpunks = () => {
 			  dispatch(setTotalSupply( parseInt ( response.toString() ) ));
 			  return response;
 			},
-			getPunksRemainingToAssign: async (): Promise<Amount | null> => {
+			getRemainingToAssign: async (): Promise<Amount | null> => {
 			  if (!Contract) return Promise.resolve({message: 'Contract not found.', code: 404});
-			  const response = await Contract.punksRemainingToAssign()
-			  dispatch(setPunksRemainingToAssign( parseInt ( response.toString() ) ));
+			  const response = await Contract.remainingToAssign()
+			  dispatch(setRemainingToAssign( parseInt ( response.toString() ) ));
 			  return response;
 			},
 			
@@ -101,10 +101,10 @@ export const usePolygonpunks = () => {
 			  const response = await Contract.owner();
 			  return response;
 			},
-			getAllPunksAssigned: async (): Promise<Boolean | null> => {
+			getAllAssigned: async (): Promise<Boolean | null> => {
 			  if (!Contract) return Promise.resolve({message: 'Contract not found.', code: 404});
 			  const response = await Contract.allPunksAssigned()
-			  /* dispatch(setPunksRemainingToAssign( response)); */
+			  /* dispatch(setRemainingToAssign( response)); */
 			  return response;
 			},
 		}
@@ -259,35 +259,3 @@ export const useGetAttributeCount = () => {
 	
 	return data
 }
-			  
-/*
-	X getPunk
-	X balanceOf
-	X punksOfferedForSale
-	allPunksAssigned
-	
-	acceptBidForPunk
-	allInitialOwnersAssigned
-	buyPunk
-	enterBidForPunk
-	offerPunkForSale
-	offerPunkForSaleToAddress
-	punkNoLongerForSale
-	
-	setInitialOwner
-	setInitialOwners
-	
-	transferPunk
-	withdraw
-	withdrawBidForPunk
-	
-	claimPrice
-	
-	imageHash
-	nextPunkIndexToAssign
-	owner
-	pendingWithdrawals
-	punkBids
-	punkIndexToAddress
-	
-*/

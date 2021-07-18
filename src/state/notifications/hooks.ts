@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import { useDispatch } from 'react-redux'
 
-import { addNotification, removeNotification } from '../state/notifications/actions'
+import { addNotification, removeNotification } from './actions'
 
 // Notifications
 const useNotifications = () => {
