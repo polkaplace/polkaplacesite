@@ -4,7 +4,7 @@ import { HashRouter as Router, Route } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 
 import { Windmill } from '@windmill/react-ui';
-import ppTheme from './styles/windmillTheme.js';
+import PTheme from './styles/windmillTheme.js';
 
 // Store
 import store from './state';
@@ -25,7 +25,7 @@ import HowToMint from './pages/HowToMint'
 import Notifications from './components/notifications/Notifications';
 
 // Icons
-import discord from './components/layout/assets/discord';
+//import discord from './components/layout/assets/discord';
 import twitter from './components/layout/assets/twitter';
 import telegram from './components/layout/assets/telegram';
 import medium from './components/layout/assets/medium';
@@ -76,7 +76,7 @@ export function App() {
             <ApplicationUpdater />
             <PolkaplaceUpdater />
 
-            <Windmill theme={ppTheme}>
+            <Windmill theme={PTheme}>
               <Route
                 exact
                 path='/'
