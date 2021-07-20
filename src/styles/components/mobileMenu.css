@@ -1,13 +1,16 @@
 .mobileMenu{
-	transform: translate(-100%, 0%);
+	opacity: 0;
+	transform: translateX(-30px);
+	@apply bg-gradient-to-b from-primary to-secondary;
 	transition: all .375s;
 	z-index: 99;
 	position: fixed;
-	max-width: 250px;
+	max-width: 260px;
 	left: 0;
 }
 .isOpen .mobileMenu{
-	transform: translate(0, 0);
+	opacity: 1;
+	transform: translateX(0px);
 	
 }
 .mobileMenu .inner{
@@ -22,13 +25,13 @@
 	left: 0;
 	bottom: 0;
 	z-index: 98;
-	transform: translate(100%, 0);
+
 	
 	opacity: 0;
 	transition: all .375s;
 }
 .isOpen .menuMask{
-	transform: translate(0%, 0);
+
 	opacity: 1;
 }
 
@@ -50,7 +53,7 @@
 	opacity: 1;
 }
 
-.mobileMenu::after,
+/* .mobileMenu::after,
 .mobileMenu::before{
 	content: '';
     position: absolute;
@@ -69,7 +72,7 @@
 .isOpen .mobileMenu::before {
     transform: translate(0, 0);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2)
-}
+} */
 .mobileMenu ul{
 	
 }
@@ -90,4 +93,5 @@
     font-size: 1.4em;
     text-decoration: none;
     font-family: Poppins, system-ui;
+		color: white;
 }

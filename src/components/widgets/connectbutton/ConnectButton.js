@@ -44,12 +44,12 @@ const ConnectButton = (props) => {
         <>
           <Button
         	size={((props.size)? props.size : 'small' )}
-        	className={((props.className)? props.className : 'w-full' )}
+        	className={((props.className)? props.className : '' )}
             onClick={() => {
               openModal(true);
             }}
           >
-            {((props.children)? props.children : 'Connect Wallet')}
+            {((props.children)? props.children : 'Connect')}
           </Button>
           <ConnectModal
             handleClose={() => {

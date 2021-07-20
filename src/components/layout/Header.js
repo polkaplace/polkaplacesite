@@ -8,10 +8,13 @@ import useWindowResize from '../../hooks/useWindowResize';
 import '../../styles/components/mobileMenu.css'
 
 import Logo from '../../assets/img/logo.svg';
+import LogoWhite from '../../assets/img/logo-white.svg';
 import Socials from './Socials.js';
 
 import OpenIcon from './assets/open';
 import CloseIcon from './assets/close';
+
+import { MenuAlt3Icon, XIcon } from '@heroicons/react/outline';
 
 import ConnectButton from './../widgets/connectbutton/ConnectButton';
 
@@ -83,6 +86,12 @@ const Header = (props) => {
     </Link>
   );
 
+  const logoWhite = (
+    <Link to='/'>
+      <img src={LogoWhite} alt="" className="w-40 flex-shrink-0" />
+    </Link>
+  );
+
   const mobileMenuButton = () => {
     return (
         <div
@@ -92,9 +101,9 @@ const Header = (props) => {
           }}
         >
           {isOpenMobileMenu ? (
-            <OpenIcon width={30} height={30} />
+            <XIcon width={30} height={30} />
           ) : (
-            <CloseIcon width={30} height={30} />
+            <MenuAlt3Icon width={30} height={30} />
           )}
         </div>
     );
@@ -105,13 +114,18 @@ const Header = (props) => {
 	    <>
         <div className='mobileMenu absolute bottom-0 top-0 right-0 w-full'> 
           <div className='inner'>
-	          <div className='mx-auto w-32 mt-20 mb-20 text-center'>{logo}</div>
+	          <div className='mx-auto w-32 my-10 text-center'>{logoWhite}</div>
 	          <ul className='text-white'>
 		          {makeMenu(props.menu.right || [], true)}
 				  {makeMenu(props.menu.left, true)}
 				  
 				  {((props.menu.left !== props.menu.mainMenu)? makeMenu(props.menu.mainMenu, true) : '')}
 			  </ul>
+        <div className="text-center mt-5">
+        <div className='items-center justify-center bg-white p-3 rounded-full inline-flex mx-auto text-center'>
+						<Socials menu={props.menu} />
+					</div>
+        </div>
 			</div>
 	     </div>
 	     <div className='menuMask' 
@@ -144,15 +158,13 @@ const Header = (props) => {
 		</div>
 	) : (
 		<>
-			<div className='container py-2 pt-2'>{connectButton}</div>
+			{/* <div className='container py-2 pt-2'>{connectButton}</div> */}
 			<div className={'container py-5 pt-6 md:py-7 border-b flex items-center'}>
 				
 				{logo}
-				<div className='ml-4 md:border-l md:ml-5 md:pl-5 pr-10'>
-					<div className='flex items-center '>
-						<Socials menu={props.menu} />
-					</div>
-				</div>
+        <div className="ml-auto mr-10 pl-5">
+        {connectButton}
+        </div>
 				{mobileMenuButton()}
 			</div>
 			{mobileMenu()}
