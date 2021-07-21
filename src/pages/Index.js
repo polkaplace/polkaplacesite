@@ -5,6 +5,7 @@ import UIHeader from '../components/layout/Header';
 import { CubeIcon } from "@heroicons/react/outline";
 
 import HpBg from '../assets/img/hp-bg.jpg';
+import PolkaNft from '../components/cards/PolkaNft';
 
 import { Link } from 'react-router-dom';
 import { Button } from '@windmill/react-ui';
@@ -34,7 +35,7 @@ export function IndexPage(props) {
       {/* TODO: Create a Layout module to house the content */}
       <div className='w-full px-5 relative overflow-hidden'>
         <img src={HpBg} className="w-full top-0 absolute left-0" alt="" />
-        <div className='container py-16 md:py-28 relative'>
+        <div className='container py-16 md:py-28 md:pb-16 relative'>
           <div className='max-w-[700px] mx-auto text-center relative'>
             <h1 className="bg-clip-text bg-gradient-to-b from-primary to-primary-light text-transparent">
               Welcome to PolkaPlace!
@@ -50,35 +51,7 @@ export function IndexPage(props) {
       <div className="w-full px-5 bg-secondary justify-center relative mb-20">
         <div className="w-full h-16 absolute top-0 left-0 bg-white"></div>
         <div className="w-full h-16 absolute bottom-0 left-0 bg-white"></div>
-          <div className="card relative z-10 mx-auto bg-white shadow rounded p-4 md:p-8 max-w-[550px] w-full">
-            <div className="md:flex items-center">
-              <div className="mx-auto md:mx-0 mb-5 md:mb-0 nft w-[120px] h-[120px] flex-shrink-0 md:w-[144px] md:h-[144px] bg-yellow-200"></div>
-              <h2 className="md:ml-8 text-center md:text-left">PolkaParty NFT</h2>
-            </div>
-            <div className="grid grid-cols-3 md:grid-cols-4 my-4 items-center text-center md:text-left">
-                <div>
-                  <small className="mb-0 text-xs font-bold">Price</small>
-                  <p className="-mt-2 mb-0">$500 USDC</p>
-                </div>
-                <div>
-                  <small className="mb-0 text-xs font-bold">Access</small>
-                  <p className="-mt-2 mb-0">Revenue</p>
-                </div>
-                <div>
-                  <small className="mb-0 text-xs font-bold">Amount</small>
-                  <p className="-mt-2 mb-0">1,000</p>
-                </div>
-                <div className="col-span-3 md:col-span-1 mt-4 md:mt-0">
-                  <div className="p-3 bg-green-500 rounded text-white text-center">
-                  <small className="text-xs text-white mb-0 block">NFTs Left</small>
-                  <b className="text-white -mt-1 block font-brand font-bold">100/1000</b>
-                  </div>
-                </div>
-              </div>
-
-              <Button className="w-full" size="larger">Mint</Button>
-              <small className="text-xs w-3/4 mx-auto text-center block mt-5">*Minting a PolkaParty NFT will give you access to 20% revenue sharing</small>
-            </div>
+          <PolkaNft></PolkaNft>
       </div>
 
       <UIFooter menu={props.menu} />
