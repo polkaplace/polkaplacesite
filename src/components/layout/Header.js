@@ -11,9 +11,6 @@ import Logo from '../../assets/img/logo.svg';
 import LogoWhite from '../../assets/img/logo-white.svg';
 import Socials from './Socials.js';
 
-import OpenIcon from './assets/open';
-import CloseIcon from './assets/close';
-
 import { MenuAlt3Icon, XIcon } from '@heroicons/react/outline';
 
 import ConnectButton from './../widgets/connectbutton/ConnectButton';

@@ -8,7 +8,7 @@ import { Button } from '@windmill/react-ui';
 
 export function Remaining(props) {
 	
-	const punksremainingtoassign = 10 /// useSelector(state => state.polkaplace.remainingtoassign);
+	const remainingtoassign = useSelector(state => state.polkaplace.remainingtoassign);
 
 	return (
 	    <>
@@ -17,7 +17,7 @@ export function Remaining(props) {
 				<h3 className="text-white mb-0 ml-3">Remaining</h3>
 			</div>
 			<div className="flex items-center sm:ml-10 justify-center">
-				<span className="text-3xl border-b border-primary">{punksremainingtoassign.toLocaleString()}</span>
+				<span className="text-3xl border-b border-primary">{remainingtoassign.toLocaleString()}</span>
 				<span className="ml-2 opacity-75">/ {(10000).toLocaleString()}</span>
 			</div>
 			{((props.mintButton)? 

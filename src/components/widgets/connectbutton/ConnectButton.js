@@ -7,8 +7,6 @@ import AccountModal from './AccountModal.js';
 import { Button } from '@windmill/react-ui';
 import { CreditCardIcon } from '@heroicons/react/outline';
 
-import { Link } from 'react-router-dom';
-
 const ConnectButton = (props) => { 
   const [isModelOpen, openModal] = React.useState(false);
   const accountEllipsis = props.account ? `${props.account.substring(0, 4)}...${props.account.substring(props.account.length - 4)}` : null;
@@ -27,9 +25,6 @@ const ConnectButton = (props) => {
             >
               <CreditCardIcon className='text-paragraph' />
             </button>
-            <Link to='/my'>
-              <Button size='small'>My</Button>
-            </Link>
           </div>
           <AccountModal
             account={props.account}

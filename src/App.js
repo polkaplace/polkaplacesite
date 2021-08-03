@@ -25,7 +25,6 @@ import HowToMint from './pages/HowToMint'
 import Notifications from './components/notifications/Notifications';
 
 // Icons
-//import discord from './components/layout/assets/discord';
 import twitter from './components/layout/assets/twitter';
 import telegram from './components/layout/assets/telegram';
 import medium from './components/layout/assets/medium';
@@ -39,14 +38,7 @@ let menu = {
     {
       name: 'How to mint',
       link: '/how-to-mint',
-    },
-    /*
-    {
-      name: 'My Polkas,
-      subname: '',
-      link: '/my',
-    },
-	*/
+    }
   ],
   social: [
     {

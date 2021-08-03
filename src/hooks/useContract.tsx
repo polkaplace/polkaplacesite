@@ -3,6 +3,7 @@ import { useMemo } from 'react'
 import { Contract } from '@ethersproject/contracts'
 import { ChainId, WETH } from '@pancakeswap-libs/sdk'
 
+
 import { getContract } from '../utils/token/'
 import { useActiveWeb3React } from '../hooks/'
 
@@ -13,6 +14,8 @@ import { ERC20_BYTES32_ABI } from '../constants/contracts/abis/erc20'
 import ERC20_ABI from '../constants/contracts/abis/erc20.json'
 import WETH_ABI from '../constants/contracts/abis/weth.json'
 import { MULTICALL_ABI, MULTICALL_NETWORKS } from '../constants/contracts/multicall'
+import POLKAPLACE_ABI from '../constants/contracts/abis/polkaplace.json'
+import USDC_ABI from '../constants/contracts/abis/polkaplace.json'
 
 
 // returns null on errors
@@ -59,8 +62,16 @@ export function useBytes32TokenContract(tokenAddress?: string, withSignerIfPossi
 	return useContract(tokenAddress, ERC20_BYTES32_ABI, withSignerIfPossible)
 }
 
-
 export function useMulticallContract(): Contract | null {
 	const { chainId } = useActiveWeb3React()
 	return useContract(chainId && MULTICALL_NETWORKS[chainId], MULTICALL_ABI, false)
+}
+
+export function usePolkaPlaceContract(withSignerIfPossible = false): Contract | null {
+	const contractAddress = process.env.REACT_APP_POLKAPLACE_CONTRACT;
+	return useContract(contractAddress, POLKAPLACE_ABI, withSignerIfPossible);
+}
+export function useUSDCContract(withSignerIfPossible = false): Contract | null {
+	const contractAddress = process.env.REACT_APP_USDC_CONTRACT;
+	return useContract(contractAddress, USDC_ABI, withSignerIfPossible);
 }

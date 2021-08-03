@@ -11,7 +11,7 @@ import { connectorsByName, connectorLocalStorageKey, ConnectorNames  } from '../
 const useAuth = () => {
 	const { activate, deactivate } = useWeb3React()
 	const { notificationError } = useNotifications()
-	
+		
 	const logout = () => {
 		window.localStorage.removeItem(connectorLocalStorageKey);
 		deactivate();

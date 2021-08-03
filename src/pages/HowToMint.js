@@ -2,11 +2,7 @@
 
 import UIFooter from '../components/layout/Footer';
 import UIHeader from '../components/layout/Header';
-import { CubeIcon } from "@heroicons/react/outline";
 import HpBg from '../assets/img/hp-bg.jpg';
-
-import { Link } from 'react-router-dom';
-import { Button } from '@windmill/react-ui';
 
 // Hooks
 import { useActiveWeb3React } from '../hooks';
@@ -53,7 +49,7 @@ export function IndexPage(props) {
 
         <div className="container-sm flex-row space-y-4 mb-20">
           {steps.map((step, i) => (
-          <div className="p-8 rounded shadow items-center relative flex">
+          <div key={i} className="p-8 rounded shadow items-center relative flex">
             <span className="w-[66px] h-[66px] rounded-full bg-gradient-to-b from-primary to-primary-light md:-translate-x-1/2 md:absolute left-0 items-center text-white justify-center flex font-brand font-bold text-lg">{i+1}</span>
             <div className="ml-5">
             <h3 className="mb-0">{step}</h3>

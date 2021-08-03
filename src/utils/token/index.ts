@@ -71,29 +71,3 @@ export const formatBalance = (balance, decimals) => {
     decimals: balances[1] ? balances[1].substring(0, decimals) : defaultDecimals,
   }
 }
-
-// Add token to wallet
-export const addTokenToWallet = () => {
-  
-  const addTokenToWallet = async () => {
-    const request = await window.ethereum.request({
-      method: 'wallet_watchAsset',
-      params: {
-        type: 'ERC20',
-        options: {
-          address: process.env.REACT_APP_SAFU_TOKEN_ADDRESS,
-          symbol: 'SAFU',
-          decimals: 18,
-          image: 'https://ceezee.io/img/favicon.png',
-        },
-      },
-    });
-    return request;
-  };
-  
-  addTokenToWallet().then((success) => {
-    console.log(success);
-  }).catch((err) => {
-    console.error(err);
-  });
-}
